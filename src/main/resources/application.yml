@@ -1,0 +1,21 @@
+server:
+  port: 8092
+
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/views/
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/wu_edu_department_radio_play?allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: XXX
+    password: XXX
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  resources:
+    static-locations:  classpath:/static/,classpath:/views/,classpath:/public,classpath:/resources,classpath:/META-INF/resources
+file:
+  radioFolder: D:/WXEduDepartmentRadio/radio/
+  picFolder: D:/WXEduDepartmentRadio/pic/

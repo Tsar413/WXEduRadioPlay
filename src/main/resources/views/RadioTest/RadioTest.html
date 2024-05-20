@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>RadioTest</title>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <button id="test"> Test </button>
+    <audio id="audio1"></audio>
+    <button id="play"> Play </button>
+    <button id="stop"> Stop </button>
+    <img id="img1" src=""/>
+</body>
+<script inline="javascript">
+    let test = document.getElementById("test");
+    var audio1 = $("#audio1")[0];
+    var img1 = $("#img1")[0];
+
+    test.onclick = function() {
+        $.get("/radioTest-radioAddress?"+$.param({buttonId: 1
+            }),function(data){
+                console.log(data[0]);
+                $(audio1).attr('src', data[0].radioAddress);
+                $(img1).attr('src', data[0].picAddress);
+            });
+    }
+
+    $("#play").click(function(){
+        console.log(0);
+        audio1.play();
+    });
+
+    $("#stop").click(function(){
+        audio1.pause();
+    });
+
+
+
+</script>
+
+</html>
